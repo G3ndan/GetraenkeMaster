@@ -1,0 +1,34 @@
+body{
+  background-color: #AAAFB3;
+  color: #E61739;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  padding: 4%;
+}
+h1{
+  text-align: center;
+}
+#tb1 {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+#tb1 td, #tb1 th {
+  padding: 8px;
+}
+
+#tb1 tr:nth-child(even){background-color: #E4E8EB;}
+
+#tb1 tr:hover {background-color: #787D80;}
+
+#tb1 th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #E61739;
+  color: white;
+}
+
+#submit{
+  display: block;
+  margin-left: auto;
+}
