@@ -1,6 +1,6 @@
 <?php
-include "../PHP/checkValidUser.php"; 
-}
+include "../PHP/checkValidUser.php";
+
 if(isset($_POST['p']) && !empty($_POST['p'])){
   $script = $_POST['p'];
   include "../PHP/list.php";

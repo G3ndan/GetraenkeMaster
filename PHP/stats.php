@@ -37,19 +37,20 @@ function searchTime($mysqli, $year, $month){
     return false;
   }
 
-  require_once "db.php";
+  require "db.php";
 
   $result = $mysqli->query("SELECT * FROM Bestellungen WHERE date BETWEEN $b1 and $b2");
-  if($result == NULL){
+  if($result == false){
     echo "Invalid date";
     $result->closeCursor();
-    $result = NULL;
-    $mysqli = NULL;
+    $result = null;
+    $mysqli = null;
     return false;
   }
   $data = $result->fetchAll(PDO::FETCH_NUM);
   $result->closeCursor();
   $result = null;
+  $mysqli=null;
 
   $sum = [];
   foreach ($data as $set) {
@@ -102,5 +103,4 @@ else{
   searchTime($mysqli, $year, $month);
 }
 
-$mysqli=null;
 ?>

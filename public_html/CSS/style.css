@@ -1,5 +1,5 @@
 body{
-  background-color: black;
+  background-color: #A5ACB0;
   color: #E61739;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   height: 100%;
@@ -12,11 +12,6 @@ body{
 
 header{
   width: 100%;
-}
-
-header nav{
-  width: 20%;
-  background: black;
 }
 
 .menu-bar{
@@ -51,9 +46,9 @@ header nav ul li a:hover{
 /**/
   header nav{
     width: 20%;
-    height: 100%;
+    background-color: #991F3D;
     left: -100%;
-    margin: 0;
+    margin-top: 10%;
     position: fixed;
   }
 
@@ -83,22 +78,15 @@ header nav ul li a:hover{
   .menu-bar i{
     padding-right: 10px;
   }
-  .menu-bar b{
-    visibility: hidden;
-  }
 
 @media screen and (max-width:800px) {
   header nav{
     width: 100%;
+    margin: 0;
   }
 
   .menu-bar{
     width: 100%;
-  }
-
-  .menu-bar b{
-    visibility: visible;
-    font-size: 20px;
   }
 }
 
@@ -132,7 +120,10 @@ h1{
 
 #submit{
   display: block;
-  margin-left: auto;
+  float: right;
+  margin-right: 5%;
+  border-radius: 20px;
+  padding: 0.5%;
 }
 
 /*.login{
@@ -150,14 +141,21 @@ h1{
   padding: 2%;
 }
 */
-#button{
-
-}
-
 #add{
-
+  display: block;
+  float: left;
+  border-radius: 20px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
-.remove{
-
+.del{
+  display: block;
+  border-radius: 20px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  padding-left: 2%;
+  padding-right: 2%;
 }

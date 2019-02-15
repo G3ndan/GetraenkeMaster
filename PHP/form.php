@@ -1,6 +1,7 @@
 <?php
+session_start();
 $data = json_decode($_POST['valuesArray']);
-$uid = "2";
+$uid = $_SESSION['id'];
 
 function checkArray($test, $sorten){
   for($i=0; $i < count($test); $i++){
@@ -16,7 +17,7 @@ function checkArray($test, $sorten){
   return true;
 }
 
-require_once "db.php";
+require "db.php";
 
 $result = $mysqli->query("SELECT * FROM Sorte");
 $sorten = $result->fetchAll(PDO::FETCH_NUM);
@@ -33,6 +34,8 @@ if(checkArray($data, $sorten)){
     $query->bindValue(":uid", $uid);
     $query->execute();
   }
+  $query->closeCursor();
+  $query = null;
   echo "Added successfully";
 }
 else {

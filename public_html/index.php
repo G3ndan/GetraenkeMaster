@@ -7,7 +7,7 @@ require_once "../PHP/setValidUser.php";
  <title>Getränkemanager</title>
  <meta charset="utf-8">
  <meta name="viewport" content="width= device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
- <link rel="stylesheet" type="text/css" href="CSS/style.css" />
+ <link rel="stylesheet" type="text/css" href="CSS/style.css?v1" />
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
  <!--<script type="text/javascript" src="JS/jquery.validate.js"></script>!-->
@@ -23,7 +23,7 @@ require_once "../PHP/setValidUser.php";
          <li><a href="deauth.php"><i class="fas fa-power-off"></i>LogOut</a></li>
          <li><a href="#"><i class="fas fa-lock"></i>Change Password</a></li>
          <?php if($_SESSION['id'] == 1){
-           echo "<li><a href '#'><i class='fas fa-user-plus'>Add User</i></a></li>";
+           echo "<li><a href='addUser.php'><i class='fas fa-user-plus'>Add User</i></a></li>";
          } ?>
        </ul>
      </nav>

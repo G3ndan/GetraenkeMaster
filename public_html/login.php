@@ -2,10 +2,11 @@
 <html lang="de">
 <head>
 	<title>Getränkemanagement | Login</title>
-	<link rel="stylesheet" href="/CSS/login.css">
+	<link rel="stylesheet" href="/CSS/login.css?v1">
 	<script type="text/javascript" src="/JS/jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="/JS/functions.js"></script>
-  <!--<script type="text/javascript" src="/JS/form.js"></script>!-->
+	<script type="text/javascript" src="/JS/jquery.validate.js"></script>
+  <script type="text/javascript" src="/JS/form.js"></script>
 	<meta charset="UTF-8">
 	<body>
 		<div class="form">
