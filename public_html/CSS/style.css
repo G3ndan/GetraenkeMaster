@@ -1,24 +1,126 @@
 body{
-  background-color: #AAAFB3;
+  background-color: black;
   color: #E61739;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  padding: 4%;
+  height: 100%;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  width: 100%;
+}
+
+header nav{
+  width: 20%;
+  background: black;
+}
+
+.menu-bar{
+  display: block;
+  width: 20%;
+}
+
+header nav ul{
+  overflow: hidden;
+  list-style: none;
+}
+
+header nav ul li{
+  float: left;
+}
+
+header nav ul li a{
+  color: white;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+}
+
+header nav ul li i{
+  margin-right: 10px;
+}
+
+header nav ul li a:hover{
+  background: #E61739;
+}
+
+/**/
+  header nav{
+    width: 20%;
+    height: 100%;
+    left: -100%;
+    margin: 0;
+    position: fixed;
+  }
+
+  header nav ul li{
+    display: block;
+    float: none;
+    border-bottom:1px solid rgba(255,255,255, 0.3);
+  }
+
+  .menu-bar .bt-menu{
+    display: block;
+    padding: 20px;
+    color: #E61739;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+  }
+
+  .menu-bar i a{
+    float:left;
+    font-size: 40px;
+  }
+
+  .menu-bar i{
+    padding-right: 10px;
+  }
+  .menu-bar b{
+    visibility: hidden;
+  }
+
+@media screen and (max-width:800px) {
+  header nav{
+    width: 100%;
+  }
+
+  .menu-bar{
+    width: 100%;
+  }
+
+  .menu-bar b{
+    visibility: visible;
+    font-size: 20px;
+  }
+}
+
 h1{
   text-align: center;
 }
 #tb1 {
-  width: 100%;
+  width: 90%;
   margin-bottom: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 #tb1 td, #tb1 th {
   padding: 8px;
+  width: 5%;
+}
+#tb1 tr{
+  background-color: #DEDEDE;
 }
 
-#tb1 tr:nth-child(even){background-color: #E4E8EB;}
-
-#tb1 tr:hover {background-color: #787D80;}
+#tb1 tr:hover {background-color: #737373;}
 
 #tb1 th{
   padding-top: 12px;
@@ -31,4 +133,31 @@ h1{
 #submit{
   display: block;
   margin-left: auto;
+}
+
+/*.login{
+  position: absolute;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 25%;
+  height: 45%;
+  border-style: dotted;
+  border-color: green;
+  padding: 2%;
+}
+*/
+#button{
+
+}
+
+#add{
+
+}
+
+.remove{
+
 }

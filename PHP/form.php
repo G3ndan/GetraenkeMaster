@@ -2,25 +2,24 @@
 $data = json_decode($_POST['valuesArray']);
 $uid = "2";
 
-include "db.php";
-
 function checkArray($test, $sorten){
-  for($i=0; $i < count($test); $i += 2){
+  for($i=0; $i < count($test); $i++){
     for($j=0; $j < count($sorten); $j++){
-      if($test[$i] == $sorten[$j][0]){
+      if($test[$i][0] == $sorten[$j][0]){
         break;
       }
       if($j == count($sorten)-1){
-        return FALSE;
+        return false;
       }
     }
   }
-  return TRUE;
+  return true;
 }
 
+require_once "db.php";
 
 $result = $mysqli->query("SELECT * FROM Sorte");
-$sorten = $result->fetchAll();
+$sorten = $result->fetchAll(PDO::FETCH_NUM);
 $result->closeCursor();
 $result = null;
 
@@ -29,12 +28,12 @@ if(checkArray($data, $sorten)){
   $query = $mysqli->prepare("INSERT INTO `Bestellungen`(`sorte`, `anzahl`, `user_id`, `date`) VALUES (:flav, :menge, :uid, CURRENT_DATE())");
 
   for ($i=0; $i < count($data); $i++) {
-    $query->bindValue(":flav", $data[$i]);
-    $i++;
-    $query->bindValue(":menge", $data[$i]);
+    $query->bindValue(":flav", $data[$i][0]);
+    $query->bindValue(":menge", $data[$i][1]);
     $query->bindValue(":uid", $uid);
     $query->execute();
   }
+  echo "Added successfully";
 }
 else {
   echo "Invalid Input";

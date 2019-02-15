@@ -1,11 +1,11 @@
 <?php
 
-include "db.php";
 
 error_reporting(0);
 
 function searchTime($mysqli, $year, $month){
 # set border1
+  $month = (int)$month;
   if($month < 10){
     $b1 = $year."0$month"."01";
   }
@@ -32,14 +32,24 @@ function searchTime($mysqli, $year, $month){
     $b2 = $year."0$month"."30";
   }
 
+  if((strlen($b1) != 8) || (strlen($b2) != 8 )){
+    echo "Invalid Input";
+    return false;
+  }
+
+  require_once "db.php";
 
   $result = $mysqli->query("SELECT * FROM Bestellungen WHERE date BETWEEN $b1 and $b2");
   if($result == NULL){
-    echo "Error: Invalid date";
+    echo "Invalid date";
+    $result->closeCursor();
+    $result = NULL;
+    $mysqli = NULL;
     return false;
   }
   $data = $result->fetchAll(PDO::FETCH_NUM);
   $result->closeCursor();
+  $result = null;
 
   $sum = [];
   foreach ($data as $set) {
@@ -66,8 +76,6 @@ function searchTime($mysqli, $year, $month){
     echo "],";
   }
 
-  $result = null;
-  $raw = null;
 
   return $liste;
 }
@@ -79,14 +87,12 @@ if(isset($_POST['date']) && !empty($_POST['date'])) {
 
   searchTime($mysqli, $year, $month);
 }
-else if(isset($_GET['stat']) && !empty($_GET['stat'])){
-  if($_GET['stat'] == "get"){
-    $time = getdate();
-    $month = $time['mon'];
-    $year = $time['year'];
+else if($get === true){
+  $time = getdate();
+  $month = $time['mon'];
+  $year = $time['year'];
 
-    $list = searchTime($mysqli, $year, $month);
-  }
+  $list = searchTime($mysqli, $year, $month);
 }
 else{
   $time = getdate();

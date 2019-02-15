@@ -1,5 +1,5 @@
 <?php
-include "db.php";
+require_once "db.php";
 
 $result = $mysqli->query("SELECT * FROM Sorte");
 $sorten = $result->fetchAll();

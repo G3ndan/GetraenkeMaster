@@ -2,7 +2,7 @@
 if(isset($_POST['email']) && !empty($_POST['email'])){
   $email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
   if($email){
-    include "db.php";
+    require_once "db.php";
     $query = $mysqli->prepare("SELECT `email` FROM `User` WHERE `email`= :email");
     $query->bindValue(":email", $email);
     $query->execute();

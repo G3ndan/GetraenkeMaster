@@ -13,10 +13,10 @@ function sendMail(){
 */error_reporting(0);
   $body = "Diesen Monat haben wir ";
 
-  $_GET['stat'] = "get";
+  $get = true;
 
   ob_start();
-  include "stats.php";
+  require "stats.php";
   ob_end_clean();
 
 
