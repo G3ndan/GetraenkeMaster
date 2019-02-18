@@ -13,12 +13,33 @@ function sendMail(){
 */error_reporting(0);
   $body = "Diesen Monat haben wir ";
 
-  $get = true;
+
+  require "statfuncs.php";
 
   ob_start();
-  require "stats.php";
-  ob_end_clean();
+  $time = getdate();
+  $month = $time['mon'];
+  $year = $time['year'];
 
+  if($month == 2){
+    $ende = $year."0228";
+  }
+  elseif($month > 9){
+    if($month == 11){
+      $ende = $year.$month."30";
+    }
+    else{
+      $ende = $year.$month."31";
+    }
+  }
+  elseif(in_array($month, [1, 3, 5, 7, 8])){
+    $ende = $year."0$month"."31";
+  }
+  else{
+    $ende = $year."0$month"."30";
+  }
+  $list = searchMonth($ende);
+  ob_end_clean();
 
   for ($i=0; $i < count($list) ; $i++) {
     if($i == count($list)-1){

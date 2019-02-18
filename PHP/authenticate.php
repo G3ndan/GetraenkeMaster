@@ -24,7 +24,6 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
           die();
         }
         else{
-          echo "Failed to log in";
           session_destroy();
         }
       }

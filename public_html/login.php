@@ -1,3 +1,4 @@
+<?php include "../PHP/authenticate.php" ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -11,7 +12,7 @@
 	<body>
 		<div class="form">
 				<h1 id="title">CGI Getränkemanager</h1>
-				<form class="form1" onsubmit= <?php include "../PHP/authenticate.php"  ?> method="post">
+				<form class="form1" action="" method="post">
 					<input type="email" name="email" placeholder="E-Mail Adresse" >
 					<input type="password" name="password" placeholder="Passwort">
 					<button type="submit" name="submit" id="button">Sign in</button>

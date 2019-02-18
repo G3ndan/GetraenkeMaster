@@ -29,6 +29,9 @@ if(checkArray($data, $sorten)){
   $query = $mysqli->prepare("INSERT INTO `Bestellungen`(`sorte`, `anzahl`, `user_id`, `date`) VALUES (:flav, :menge, :uid, CURRENT_DATE())");
 
   for ($i=0; $i < count($data); $i++) {
+    if($data[$i][1] > 4){
+      break;
+    }
     $query->bindValue(":flav", $data[$i][0]);
     $query->bindValue(":menge", $data[$i][1]);
     $query->bindValue(":uid", $uid);
@@ -36,10 +39,6 @@ if(checkArray($data, $sorten)){
   }
   $query->closeCursor();
   $query = null;
-  echo "Added successfully";
-}
-else {
-  echo "Invalid Input";
 }
 
 $mysqli=null;

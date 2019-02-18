@@ -2,7 +2,7 @@
 require "db.php";
 
 $result = $mysqli->query("SELECT * FROM Sorte");
-$sorten = $result->fetchAll();
+$sorten = $result->fetchAll(PDO::FETCH_NUM);
 
 foreach($sorten as $row){
   echo "<option>$row[0]</option>";

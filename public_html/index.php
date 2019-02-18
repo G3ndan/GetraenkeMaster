@@ -3,32 +3,19 @@ require_once "../PHP/setValidUser.php";
 ?>
 <!DOCTYPE html>
  <html lang="de">
- <head> 
+ <?php include "../PHP/head.php" ?>
  <title>Getränkemanager</title>
  <meta charset="utf-8">
  <meta name="viewport" content="width= device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
  <link rel="stylesheet" type="text/css" href="CSS/style.css?v1" />
  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
- <!--<script type="text/javascript" src="JS/jquery.validate.js"></script>!-->
+ <script type="text/javascript" src="JS/jquery.validate.js"></script>
  <script type="text/javascript" src="JS/functions.js"></script>
  </head> 
  <body>
-   <header>
-     <div class="menu-bar">
-       <a class="bt-menu"><i class="fas fa-bars"></i><b>Menü</b></a>
-     <nav>
-       <ul>
-         <li><a href="chart.php"><i class="far fa-chart-bar"></i>Stats</a></li>
-         <li><a href="deauth.php"><i class="fas fa-power-off"></i>LogOut</a></li>
-         <li><a href="#"><i class="fas fa-lock"></i>Change Password</a></li>
-         <?php if($_SESSION['id'] == 1){
-           echo "<li><a href='addUser.php'><i class='fas fa-user-plus'>Add User</i></a></li>";
-         } ?>
-       </ul>
-     </nav>
-   </div>
-   </header>
+
+<?php include "../PHP/menu.php" ?>
  <h1><?php var_dump($_SESSION); ?></h1>
  <form  onsubmit="Evaluate(); return false;" method="post">
    <table id="tb1">

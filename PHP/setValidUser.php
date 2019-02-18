@@ -6,7 +6,7 @@ if(!isset($_SESSION['user']) || empty($_SESSION['user'])){
   die();
 }
 else{
-  require_once "db.php";
+  require "db.php";
   $query = $mysqli->prepare("SELECT `email` FROM `User` WHERE `email` = :email");
   $query->bindValue(":email", $_SESSION['user']);
   if($query->execute()){

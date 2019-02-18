@@ -1,82 +1,88 @@
 <?php
-require "../PHP/checkValidUser.php"
-}
+require "../PHP/checkValidUser.php";
+require_once "../PHP/statfuncs.php";
 ?>
 <html>
-  <head>
-    <!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <!--<script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="JS/functions.js"></script>!-->
-    <script type="text/javascript">
+  <?php include "../PHP/head.php"; ?>
+  <link rel="stylesheet" href="/CSS/chart.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['bar']});
+    google.charts.setOnLoadCallback(drawBar);
 
-      // Load the Visualization API and the corechart package.
+    function drawBar() {
+      var data = google.visualization.arrayToDataTable([
+        ["Monat", "Gesamt", "Du"],
+        <?php $action = 'user'; include "../PHP/stats.php"; ?>
+        ]);
+
+      var options = {
+        chart: {
+          title: 'Vergleich',
+          subtitle: 'Du vs. das gesamte SOC',
+        },
+        backgroundColor: "#A5ACB0",
+      };
+
+      var chart = new google.charts.Bar(document.getElementById('barchart_div'));
+
+      chart.draw(data, google.charts.Bar.convertOptions(options));
+    }
+  </script>
+  <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawPie);
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      //google.charts.setOnLoadCallback(drawChart);
+      function drawPie() {
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-        //$.when(getChart()).done(function(){
-        //var stat = getChart();
-        //$(document).ajaxStop(function(){
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Sorte');
-        data.addColumn('number', 'Anzahl');
-        //console.log(stat);
-        data.addRows([<?php include "../PHP/stats.php" ?> ]);
+        var data = google.visualization.arrayToDataTable([
+          ['Sorten', 'Anzahl'],
+          <?php $action = 'month'; include "../PHP/stats.php"; ?>
+        ]);
 
-        // Set chart options
-        var options = {'title':'Anzahl der geholten Getränke',
-                       'width':1200,
-                       'height':900};
+        var options = {
+          title: 'Aktivität in diesem Monat'
+        };
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart_div'));
+
         chart.draw(data, options);
-      };//)};
+      }
     </script>
-  </head>
+
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+          var data = google.visualization.arrayToDataTable([
+            ['Sorten', 'Anzahl'],
+            <?php $action = 'year'; include "../PHP/stats.php"; ?>
+          ]);
+
+          var options = {
+            title: 'Aktivität in diesem Jahr'
+          };
+
+          var chart = new google.visualization.PieChart(document.getElementById('year_div'));
+
+          chart.draw(data, options);
+        }
+      </script>
+</head>
+
 
   <body>
+    <?php include "../PHP/menu.php"; ?>
     <!--Div that will hold the pie chart-->
     <h1>Statistik</h1>
+    <div id="barchart_div" style="width: 450px; height: 300px;"></div>
 
-    <form  onsubmit="drawChart(); return false;" method="post">
-      <table id="ch">
-        <thead>
-          <tr>
-            <th>Jahr</th>
-            <th>Monat</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="row">
-            <td>
-            <select name="year" class="year">
-              <?php
-              $time = getdate();
-              $year = $time['year'];
-              echo "<option>$year</option>";
-              ?>
-            </select>
-            </td>
-            <td>
-              <select name="month" class="month">
-                <?php for ($i=1; $i <= 12 ; $i++) {
-                  echo "<option>$i</option>";
-                } ?>
-              </select>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <button type="submit" id="submit" name="button">Sumbit</button>
-    </form>
-    <div id="chart_div"></div>
+    <div id="piechart_div" style="width: 450px; height: 300px;"></div>
+
+    <div id="year_div" style="width: 450px; height: 300px;"></div>
+
+    </div>
   </body>
 </html>

@@ -17,8 +17,5 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
     $mysqli = null;
 
   }
-  else{
-    echo "Invalid Email";
-  }
 }
 ?>

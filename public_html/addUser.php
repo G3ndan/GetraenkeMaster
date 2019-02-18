@@ -4,6 +4,7 @@ if($_SESSION['id'] != 1){
   header("Location: http://localhost/index.php");
   die();
 }
+include "../PHP/newUser.php";
 ?>
 <!DOCTYPE html>
 <html lang="de" >
@@ -16,7 +17,7 @@ if($_SESSION['id'] != 1){
     <link rel="stylesheet" href="/css/login.css">
   </head>
   <body>
-    <form class="form1" action="../PHP/newUser.php" method="post">
+    <form class="form1" action="" method="post">
       <input type="email" name="email" placeholder="Email">
       <input type="password" name="password" placeholder="Passwort">
       <button type="submit" name="button">Hinzufügen</button>

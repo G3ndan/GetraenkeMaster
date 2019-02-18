@@ -1,0 +1,180 @@
+body{
+  background-color: #A5ACB0;
+  color: #E61739;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+#barchart_div rect{
+  z-index: -1;
+}
+
+#piechart_div g text{
+  fill: black;
+}
+
+#year_div g text{
+  fill: black;
+}
+
+#barchart_div g text{
+  fill: black;
+}
+
+#piechart_div rect{
+  visibility: hidden;
+  z-index: -1;
+}
+
+#year_div rect{
+  visibility: hidden;
+  z-index: -1;
+}
+
+#barchart_div{
+  float: left;
+  margin-left: 20px;
+  padding-right: 20px;
+  width: 450px;
+  height: 300px;
+
+}
+
+#piechart_div{
+  float: left;
+  margin-left: 20px;
+  border-right: solid red;
+  border-left: solid red;
+  width: 450px;
+  height: 300px;
+}
+
+#year_div{
+  float: left;
+  margin-left: 20px;
+  width: 450px;
+  height: 300px;
+}
+
+
+.row{
+  display: inline-block;
+  padding: 5%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header{
+  width: 100%;
+}
+
+.menu-bar{
+  display: block;
+  width: 20%;
+}
+
+header nav ul{
+  overflow: hidden;
+  list-style: none;
+}
+
+header nav ul li{
+  float: left;
+}
+
+header nav ul li a{
+  color: white;
+  padding: 20px;
+  display: block;
+  text-decoration: none;
+}
+
+header nav ul li i{
+  margin-right: 10px;
+}
+
+header nav ul li a:hover{
+  background: #E61739;
+}
+
+/**/
+  header nav{
+    width: 20%;
+    background-color: #991F3D;
+    left: -100%;
+    margin-top: 10%;
+    position: fixed;
+    z-index: 10;
+  }
+
+  header nav ul li{
+    display: block;
+    float: none;
+    border-bottom:1px solid rgba(255,255,255, 0.3);
+  }
+
+  .menu-bar .bt-menu{
+    display: block;
+    padding: 20px;
+    color: #E61739;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing: border-box;
+  }
+
+  .menu-bar i a{
+    float:left;
+    font-size: 40px;
+  }
+
+  .menu-bar i{
+    padding-right: 10px;
+  }
+
+@media screen and (max-width:800px) {
+  header nav{
+    width: 100%;
+    margin: 0;
+  }
+
+  .menu-bar{
+    width: 100%;
+  }
+
+  .row{
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 0;
+  }
+  #piechart_div{
+    border-bottom: solid red;
+    border-top: solid red;
+    border-right: hidden;
+    border-left: hidden;
+    padding-top: 2%;
+  }
+
+  #barchart_div, #piechart_div, #year_div{
+    width: 350px;
+    height: 300px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #barchart_div{
+  margin-right: 20px;
+  }
+}
+
+h1{
+  text-align: center;
+}
