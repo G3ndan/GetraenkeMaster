@@ -78,57 +78,9 @@ var jsonString = JSON.stringify( values );
          p : "form" ,
          valuesArray : jsonString
        },
-       success: function(){
-         alert("Daten erfolgreich abgeschickt");
+       success: function(data){
+         alert(data);
        },
-       error: function(){
-         alert("Failed");
-       }
     });
     return false;
 }
-
-function validate(){
-  $.ajax({
-      type: "POST",
-      data: { p : "authenticate"},
-      url: "../handler.php",
-      success: function(data){
-        console.log(data);
-      }
-  });
-}
-
-/*
-var stat = '';
-
-function getChart(){
-  var dateString = ''
-  $("#ch tr.row").each(function(){
-    var year = $(this).find("select.year").val();
-    var month = $(this).find("select.month").val();
-    dateString = year + month;
-  });
-
-
-$.ajax({
-    async: false,
-    type: "POST",
-    url: "../handler.php",
-    data: {
-      p: "stats",
-      date: dateString
-    },
-    success: function(data){
-      return data;
-    },
-    error: function(){
-      alert("Failed");
-    }
-  });
-}
-
-function updateStat(data){
-  stat = data;
-}
-*/

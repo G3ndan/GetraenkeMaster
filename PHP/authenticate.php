@@ -11,25 +11,28 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
 
         $query = $mysqli->prepare("SELECT * FROM `User` WHERE `email`= :email");
         $query->bindValue(":email", $email);
-        $query->execute();
-        $user = $query->fetch(PDO::FETCH_ASSOC);
+        if($query->execute()){
+
+          $user = $query->fetch(PDO::FETCH_ASSOC);
+          $query->closeCursor();
+          $query = null;
+          $mysqli = null;
+          if(password_verify($passwd, $user['password'])){
+
+            $_SESSION['user'] = $email;
+            $_SESSION['id'] = (int)$user['user_id'];
+            header("Location: http://localhost/index.php");
+            die();
+          }
+        }
         $query->closeCursor();
         $query = null;
         $mysqli = null;
-
-        if(password_verify($passwd, $user['password'])){
-          $_SESSION['user'] = $email;
-          $_SESSION['id'] = (int)$user['user_id'];
-          header("Location: http://localhost/index.php");
-          die();
-        }
-        else{
-          session_destroy();
-        }
       }
     }
   }
 }
+session_destroy();
 
 
 ?>

@@ -7,7 +7,7 @@ try{
   $mysqli = new PDO("mysql:host=localhost; dbname=$database", $username, $password);
 }
 catch (PDOException $e) {
-    print "Error!: " . $e->getMessage() . "<br/>";
+    //print "Error!: " . $e->getMessage() . "<br/>";
     die();
 }
 ?>
