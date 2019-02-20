@@ -2,30 +2,30 @@
 
 
 //function sendMail(){
+error_reporting(0);
 include "Mail.php";
 
-echo "Include Complete\n";
+
 
   $time = getdate();
   $month = $time['month'];
   $year = $time['year'];
 
   $from =  "soc.etage5@gmail.com";
-  $to = "ucp60951@zwoho.com";
+  $to = "kag53945@zwoho.com";
   $subject = "Getränke Etage 5 $month-$year";
 
-  error_reporting(E_ALL);
   $body = "Hallo,\n\nDiesen Monat haben wir ";
 
 
-  require "statfuncs.php";
 
-  //ob_start();
+  ob_start();
+  require "statfuncs.php";
   $time = getdate();
   $month = $time['mon'];
   $year = $time['year'];
 
-  echo "time set\n";
+
 
   if($month == 2){
     $ende = $year."0228";
@@ -45,11 +45,9 @@ echo "Include Complete\n";
     $ende = $year."0$month"."30";
   }
 
-  echo "before searchMonth\n";
   $list = searchMonth($ende);
-  //ob_end_clean();
+  ob_end_clean();
 
-  echo "searchMonth Done\n";
 
   for ($i=0; $i < count($list) ; $i++) {
     if($i == count($list)-1){
@@ -64,7 +62,6 @@ echo "Include Complete\n";
   }
   $body .= "geholt";
 
-  echo $body;
 
 
   $host = "ssl://smtp.gmail.com";

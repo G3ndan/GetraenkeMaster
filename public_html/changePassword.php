@@ -1,5 +1,6 @@
 <?php
   require '../PHP/checkValidUser.php';
+  require '../PHP/changePw.php';
 ?>
 <html lang="en" dir="ltr">
     <?php include '../PHP/head.php'; ?>
@@ -13,10 +14,10 @@
   <body>
     <?php include '../PHP/menu.php'?>
     <div class="form">
-        <form class="form1" onsubmit="validate();" method="post">
-          <input type="password" name="password_cu" placeholder="Aktuelles Passwort">
-          <input type="password" name="password" placeholder="Neues Passwort">
-          <input type="password" name="password_rep" placeholder="Passwort wiederholen">
+        <form class="form1" action="" method="post">
+          <input type="password" name="pwOld" placeholder="Aktuelles Passwort">
+          <input type="password" name="pwNew1" placeholder="Neues Passwort">
+          <input type="password" name="pwNew2" placeholder="Passwort wiederholen">
           <button type="submit" name="submit" id="button">Passwort Ändern</button>
         </form>
     </div>

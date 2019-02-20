@@ -4,8 +4,7 @@ function searchMonth($ende){
 
   $start = substr($ende, 0, 6) . "01";
 
-  include "db.php";
-
+  require "db.php";
 
   $query = $mysqli->prepare("SELECT * FROM Bestellungen WHERE date BETWEEN :start and :ende");
   $query->bindValue(":start", $start);
@@ -21,6 +20,7 @@ function searchMonth($ende){
   $query->closeCursor();
   $query = null;
   $mysqli=null;
+
 
   $sum = [];
   foreach ($data as $set) {

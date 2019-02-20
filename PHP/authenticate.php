@@ -14,10 +14,10 @@ if(isset($_POST['email']) && !empty($_POST['email'])){
         if($query->execute()){
 
           $user = $query->fetch(PDO::FETCH_ASSOC);
-          $query->closeCursor();
-          $query = null;
-          $mysqli = null;
           if(password_verify($passwd, $user['password'])){
+            $query->closeCursor();
+            $query = null;
+            $mysqli = null;
 
             $_SESSION['user'] = $email;
             $_SESSION['id'] = (int)$user['user_id'];
