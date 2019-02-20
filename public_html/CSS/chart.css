@@ -43,8 +43,8 @@ body{
 #piechart_div{
   float: left;
   margin-left: 20px;
-  border-right: solid red;
-  border-left: solid red;
+  border-right: solid #E61739;
+  border-left: solid #E61739;
   width: 450px;
   height: 300px;
 }
@@ -156,8 +156,8 @@ header nav ul li a:hover{
     padding: 0;
   }
   #piechart_div{
-    border-bottom: solid red;
-    border-top: solid red;
+    border-bottom: solid #E61739;
+    border-top: solid #E61739;
     border-right: hidden;
     border-left: hidden;
     padding-top: 2%;
@@ -172,6 +172,7 @@ header nav ul li a:hover{
 
   #barchart_div{
   margin-right: 20px;
+  overflow: hidden;
   }
 }
 

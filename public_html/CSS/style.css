@@ -123,6 +123,7 @@ h1{
   float: right;
   margin-right: 5%;
   border-radius: 20px;
+  border: solid white;
   padding: 0.5%;
 }
 
@@ -145,6 +146,7 @@ h1{
   display: block;
   float: left;
   border-radius: 20px;
+  border: solid white;
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 2%;
@@ -154,6 +156,7 @@ h1{
 .del{
   display: block;
   border-radius: 20px;
+  border: solid white;
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 2%;

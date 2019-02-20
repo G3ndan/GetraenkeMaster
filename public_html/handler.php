@@ -1,5 +1,5 @@
 <?php
-//require "../PHP/checkValidUser.php";
+require "../PHP/checkValidUser.php";
 
 if(isset($_POST['p']) && !empty($_POST['p'])){
   $script = $_POST['p'];

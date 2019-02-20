@@ -4,9 +4,8 @@ body{
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 }
 .form{
-    position: absolute;
-    top: 40%;
-    left: 50%;
+    margin-top: 15%;
+    margin-left: 50%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -37,12 +36,6 @@ body{
   border-color: #FF6A00;
 }
 
-#error{
-  background-color: red;
-  color: white;
-
-}
-
 .row{
   width: 100%;
 }
@@ -59,6 +52,7 @@ body{
       -moz-transform: translateX(-50%) translateY(-30%);
       -webkit-transform: translateX(-50%) translateY(-30%);
       transform: translateX(-50%) translateY(-30%);
-      left: 50%;
-      top: 50%;
+      margin-left: 50%;
+      margin-top: 50%;
+      z-index: -1;
 }

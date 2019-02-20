@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 session_start();
 if(isset($_SESSION['id']) && $_SESSION['id'] == 1){
   if(isset($_POST['email']) && !empty($_POST['email'])){

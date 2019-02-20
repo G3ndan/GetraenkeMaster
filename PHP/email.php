@@ -1,25 +1,31 @@
 <?php
-/*
 
-function sendMail(){
+
+//function sendMail(){
+include "Mail.php";
+
+echo "Include Complete\n";
+
   $time = getdate();
   $month = $time['month'];
   $year = $time['year'];
 
-  $from =  "getraenkemaster@dood.com";
-  $to = "Backoffice";
+  $from =  "soc.etage5@gmail.com";
+  $to = "ucp60951@zwoho.com";
   $subject = "Getränke Etage 5 $month-$year";
 
-*/error_reporting(0);
-  $body = "Diesen Monat haben wir ";
+  error_reporting(E_ALL);
+  $body = "Hallo,\n\nDiesen Monat haben wir ";
 
 
   require "statfuncs.php";
 
-  ob_start();
+  //ob_start();
   $time = getdate();
   $month = $time['mon'];
   $year = $time['year'];
+
+  echo "time set\n";
 
   if($month == 2){
     $ende = $year."0228";
@@ -38,8 +44,12 @@ function sendMail(){
   else{
     $ende = $year."0$month"."30";
   }
+
+  echo "before searchMonth\n";
   $list = searchMonth($ende);
-  ob_end_clean();
+  //ob_end_clean();
+
+  echo "searchMonth Done\n";
 
   for ($i=0; $i < count($list) ; $i++) {
     if($i == count($list)-1){
@@ -56,11 +66,11 @@ function sendMail(){
 
   echo $body;
 
-/*
-  $host = "ssl://";
+
+  $host = "ssl://smtp.gmail.com";
   $port = "465";
-  $username = "";
-  $password = "";
+  $username = "soc.etage5@gmail.com";
+  $password = "qC@iVdW%z6^g";
 
 
   $headers = array (
@@ -74,6 +84,6 @@ function sendMail(){
   'username' => $username,
   'password' => $password));
   $mail = $smtp->send($to, $headers, $body);
-}
-*/
+//}
+
 ?>

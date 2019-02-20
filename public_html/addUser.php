@@ -1,26 +1,31 @@
 <?php
 require "../PHP/checkValidUser.php";
-if($_SESSION['id'] != 1){
+if($_SESSION['id'] != 1 ){
   header("Location: http://localhost/index.php");
   die();
 }
-include "../PHP/newUser.php";
+include '../PHP/newUser.php'
 ?>
 <!DOCTYPE html>
 <html lang="de" >
-  <head>
-    <meta charset="utf-8">
+  <?php include '../PHP/head.php'; ?>
     <title>Benutzer Hinzufügen</title>
-    <script type="text/javascript" src="/JS/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/JS/jquery.validate.js"></script>
     <script type="text/javascript" src="/JS/form.js"></script>
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/login.css">
   </head>
   <body>
+    <?php include '../PHP/menu.php'; ?>
+    <div class="form">
     <form class="form1" action="" method="post">
-      <input type="email" name="email" placeholder="Email">
-      <input type="password" name="password" placeholder="Passwort">
-      <button type="submit" name="button">Hinzufügen</button>
+      <div class="row">
+      <input type="email" name="email" placeholder="E-Mail Adresse" required >
+    </div>
+    <div class=row>
+      <input type="password" name="password" placeholder="Passwort" required>
+    </div>
+      <button type="submit" name="button" id="button">Hinzufügen</button>
     </form>
+  </div>
   </body>
 </html>
