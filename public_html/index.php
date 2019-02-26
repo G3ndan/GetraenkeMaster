@@ -1,16 +1,15 @@
 <?php
-require_once "../PHP/setValidUser.php";
+ require_once "../PHP/setValidUser.php";
 ?>
 <!DOCTYPE html>
  <html lang="de">
- <?php include "../PHP/head.php" ?>
- <title>Getränkemanager</title>
- <link rel="stylesheet" type="text/css" href="CSS/style.css?v1" />
+ <?php include '../PHP/head.php';?>
+ <title>CGI-Getränkemanager</title>
+ <link rel="stylesheet" type="text/css" href="CSS/style.css?v=1" /> 
  <script type="text/javascript" src="JS/jquery.validate.js"></script>
- </head> 
+</head>
  <body>
-
-<?php include "../PHP/menu.php" ?>
+   <?php include "../PHP/menu.php"; ?>
  <form  onsubmit="Evaluate(); return false;" method="post">
    <table id="tb1">
      <thead>

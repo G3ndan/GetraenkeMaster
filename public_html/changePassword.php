@@ -15,8 +15,9 @@
     <?php include '../PHP/menu.php'?>
     <div class="form">
         <form class="form1" action="" method="post">
+          <h2>Geben Sie ihr neues Passwort ein</h2>
           <input type="password" name="pwOld" placeholder="Aktuelles Passwort">
-          <input type="password" name="pwNew1" placeholder="Neues Passwort">
+          <input type="password" name="pwNew1" placeholder="Neues Passwort" id="pwNew1">
           <input type="password" name="pwNew2" placeholder="Passwort wiederholen">
           <button type="submit" name="submit" id="button">Passwort Ändern</button>
         </form>

@@ -1,6 +1,6 @@
 <?php
+error_reporting(0);
 session_start();
-
 $email = $_SESSION['user'];
 if(isset($_POST['pwOld']) && !empty($_POST['pwOld'])){
   if(strlen($_POST['pwOld']) < 52){

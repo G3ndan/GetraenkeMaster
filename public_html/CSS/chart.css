@@ -33,7 +33,7 @@ body{
 
 #barchart_div{
   float: left;
-  margin-left: 20px;
+  margin-left: 10px;
   padding-right: 20px;
   width: 450px;
   height: 300px;
@@ -42,7 +42,7 @@ body{
 
 #piechart_div{
   float: left;
-  margin-left: 20px;
+  margin-left: 10px;
   border-right: solid #E61739;
   border-left: solid #E61739;
   width: 450px;
@@ -51,7 +51,7 @@ body{
 
 #year_div{
   float: left;
-  margin-left: 20px;
+  margin-left: 10px;
   width: 450px;
   height: 300px;
 }

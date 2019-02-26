@@ -1,4 +1,3 @@
-
 $(function(){
     //Add, Save, Edit and Delete functions code
     $("#add").bind("click", Add);
@@ -46,7 +45,7 @@ function Add(){
         "</select>"+
         "</td>"+
         "<td>"+
-          "<button class='del' type='button'>Remove</button>"+
+          "<button class='del' type='button'>Entfernen</button>"+
         "</td>"+
         "</tr>");
 
@@ -80,6 +79,7 @@ var jsonString = JSON.stringify( values );
        },
        success: function(data){
          alert(data);
+         location.reload();
        },
     });
     return false;

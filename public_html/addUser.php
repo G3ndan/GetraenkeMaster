@@ -1,10 +1,12 @@
 <?php
-require "../PHP/checkValidUser.php";
-if($_SESSION['id'] != 1 ){
-  header("Location: http://localhost/index.php");
-  die();
-}
-include '../PHP/newUser.php'
+
+ require '../PHP/checkValidUser.php';
+ if($_SESSION['id'] != 1)
+ {
+   header("Location: http://localhost:8888/index.php");
+   die();
+ }
+ include '../PHP/newUser.php';
 ?>
 <!DOCTYPE html>
 <html lang="de" >
@@ -18,6 +20,7 @@ include '../PHP/newUser.php'
     <?php include '../PHP/menu.php'; ?>
     <div class="form">
     <form class="form1" action="" method="post">
+      <h2>Geben Sie die Benutzerdaten ein</h2>
       <div class="row">
       <input type="email" name="email" placeholder="E-Mail Adresse" required >
     </div>

@@ -33,6 +33,7 @@ header nav ul li a{
   padding: 20px;
   display: block;
   text-decoration: none;
+  transition: background-color 0.5s ease-out;
 }
 
 header nav ul li i{
@@ -79,6 +80,11 @@ header nav ul li a:hover{
     padding-right: 10px;
   }
 
+#title{
+    position: relative;
+    margin-left: 40%;
+    margin-right: auto;
+  }
 @media screen and (max-width:800px) {
   header nav{
     width: 100%;
@@ -88,10 +94,15 @@ header nav ul li a:hover{
   .menu-bar{
     width: 100%;
   }
-}
-
-h1{
-  text-align: center;
+  #title{
+    position: relative;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    z-index: -1;
+    text-align: center;
+  }
 }
 #tb1 {
   width: 90%;
@@ -106,6 +117,7 @@ h1{
 }
 #tb1 tr{
   background-color: #DEDEDE;
+  transition: background-color 1s ease-out;
 }
 
 #tb1 tr:hover {background-color: #737373;}
@@ -124,6 +136,7 @@ h1{
   margin-right: 5%;
   border-radius: 20px;
   border: solid white;
+  background-color: white;
   padding: 0.5%;
 }
 
@@ -147,6 +160,7 @@ h1{
   float: left;
   border-radius: 20px;
   border: solid white;
+  background-color: white;
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 2%;
@@ -157,6 +171,7 @@ h1{
   display: block;
   border-radius: 20px;
   border: solid white;
+  background-color: white;
   padding-top: 1%;
   padding-bottom: 1%;
   padding-left: 2%;
